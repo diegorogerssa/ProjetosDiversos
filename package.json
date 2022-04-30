@@ -1,0 +1,23 @@
+{
+  "name": "projetosdiversos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "desafios.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogersmhdg/ProjetosDiversos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogersmhdg/ProjetosDiversos/issues"
+  },
+  "homepage": "https://github.com/rogersmhdg/ProjetosDiversos#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0"
+  }
+}
