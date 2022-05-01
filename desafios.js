@@ -26,7 +26,7 @@ function compareTrue(value1, value2) {
     
 function calcArea(base, height) {
 	// seu código aqui
-    return base * height / 2;
+	return base * height / 2;
 }
 // Retorne o valor 250 quando a funcão calcArea é chamada com o parâmetro base com o valor 10 e o parâmetro height com o valor 50
 // console.log(calcArea(10, 50));
@@ -42,8 +42,8 @@ function calcArea(base, height) {
     
 function splitSentence(string) {
 	// seu código aqui
-    const stringArray = string.split(" ");
-    return stringArray;
+	const stringArray = string.split(' ');
+	return stringArray;
 }
 // Retorne o valor ['go', 'Trybe'] se a função receber a string 'go Trybe'
 // console.log(splitSentence('go Tribe'));
@@ -113,6 +113,7 @@ function highestCount(numbers) {
 // Retorne 3 quando o parâmetro passado na função highestCount seja [0, 0, 0]
 // console.log(highestCount([0, 0, 0]));
 
+
 // Desafio 7
 // Crie uma função de Caça ao Rato
 // Imagine que existem dois gatos, os quais chamaremos de cat1 e cat2, e que ambos estão caçando um mesmo rato chamado mouse. Imagine que os animais estão em uma reta, cada um em uma posição representada por um número.
@@ -122,19 +123,19 @@ function highestCount(numbers) {
     
 function catAndMouse(mouse, cat1, cat2) {
 	// seu código aqui
-    let distCat1 = Math.abs(mouse - cat1);
-    let distCat2 = Math.abs(mouse - cat2);
-    if (distCat1 < distCat2){
-        return 'cat1';
-    }else if(distCat1 > distCat2){
-        return 'cat2';
-    }else{
-        return ' os gatos se trombam e o rato foge';
-    }
+	let distCat1 = Math.abs(mouse - cat1);
+	let distCat2 = Math.abs(mouse - cat2);
+	if (distCat1 < distCat2){
+		return 'cat1';
+	}else if(distCat1 > distCat2){
+		return 'cat2';
+	}else{
+		return ' os gatos se trombam e o rato foge';
+	}
     
 }
 // Retorne a string 'cat2' caso a função catAndMouse receba os parâmetros onde gato cat2 esteja a 2 unidades de distância do rato e cat1 esteja a 3 unidades de distância do rato
-console.log(catAndMouse(6,9,4));
+//console.log(catAndMouse(6,9,4));
 // Retorne a string 'cat1' caso a função catAndMouse receba os parâmetros onde gato cat1 esteja a 6 unidades de distância do rato e cat2 esteja a 12 unidades de distância do rato
 // console.log(catAndMouse(4,10,16));
 // Retorne a string 'os gatos trombam e o rato foge' caso a função catAndMouse receba os parâmetros onde os gatos estejam na mesma distância do rato
@@ -151,6 +152,25 @@ console.log(catAndMouse(6,9,4));
     
 function fizzBuzz(numbers) {
 	// seu código aqui
+	var fbb = [];
+	for (let index = 0; index < numbers.length; index+=1) {
+		let fbbDaVez = numbers[index];
+		if ((fbbDaVez % 3 == 0) && (fbbDaVez % 5 == 0)){
+			fbbDaVez = 'fizzBuzz';
+			fbb.push(fbbDaVez);
+		}else if (fbbDaVez % 3 == 0){
+			fbbDaVez = 'fizz';
+			fbb.push(fbbDaVez);
+		}else if(fbbDaVez % 5 == 0){
+			fbbDaVez ='Buzz';
+			fbb.push(fbbDaVez);
+		}else{
+			fbbDaVez = 'bug!';
+			fbb.push(fbbDaVez);
+		}
+		
+	}return fbb;
+	
 }
 // Retorne as strings ['bug!', 'fizzBuzz', 'bug!', 'fizz', 'fizzBuzz'] quando é passado os parâmetros [2, 15, 7, 9, 45] para a função fizzBuzz
 // console.log(fizzBuzz([2,15,7,9,45]));
@@ -174,14 +194,84 @@ function fizzBuzz(numbers) {
     
 function encode(string) {
 	// seu código aqui
-}
-    
+	let criptografado = [];
+	for (const letra of string) {
+		let ldv = letra;
+		switch (letra) {
+		case 'a':
+			ldv = '1';
+			criptografado.push(ldv);
+			break;
+		case 'e':
+			ldv = '2';
+			criptografado.push(ldv);
+			break;
+		case 'i':
+			ldv = '3';
+			criptografado.push(ldv);
+			break;	
+		case 'o':
+			ldv = '4';
+			criptografado.push(ldv);
+			break;
+		case 'u':
+			ldv = '5';
+			criptografado.push(ldv);
+			break;
+		default:
+			criptografado.push(ldv);
+			break;
+		}
+	}let maisUma = criptografado.toString().replace(/,/g,'');
+	return maisUma;
+	// let newString = '';
+	// for (let index of criptografado) {
+	// 	newString += index;
+
+	// }return newString;
+}   
 // Retorne uma string decodificada quando a função decode for utilizada
     
 function decode(string) {
-	// seu código aqui
+// seu código aqui
+	let decodificar = [];
+	for (const numero of string) {
+		let numeroDaVez = numero;
+		switch (numero) {
+		case '1':
+			numeroDaVez = 'a';
+			decodificar.push(numeroDaVez);
+			break;
+		case '2':
+			numeroDaVez = 'e';
+			decodificar.push(numeroDaVez);
+			break;
+		case '3':
+			numeroDaVez = 'i';
+			decodificar.push(numeroDaVez);
+			break;	
+		case '4':
+			numeroDaVez = 'o';
+			decodificar.push(numeroDaVez);
+			break;
+		case '5':
+			numeroDaVez = 'u';
+			decodificar.push(numeroDaVez);
+			break;
+		default:
+			decodificar.push(numeroDaVez);
+			break;
+		}
+	
+	}let newString =''; 
+	for(let index of decodificar) {
+		newString += index;
+	
+	}return newString;
+	
 }
-    
+// console.log(encode('hi there!'));
+// console.log(decode('h3 th2r2!'));
     
 // Desafio 10
 // Crie uma função de Lista de Tecnologias
@@ -195,34 +285,45 @@ function decode(string) {
 // A saída da sua função deve ser uma lista de objetos ordenada pelo campo tech dos objetos com o formato acima.
     
 function techList(tec, yourName) {
-}
-    
+	let arrayAlfabetica = tec.sort();
+	let oAlfabetica = [];
+	for (let alfa of arrayAlfabetica) {
+		let tecnologia = alfa;
+		 let  objetoNew = {tech:'', name:'',};
+		 objetoNew.tech = (tecnologia);
+		 objetoNew.name = (yourName);
+		oAlfabetica.push(objetoNew);
+		
+	}
+	return oAlfabetica;
+}   
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Giulia'));
     
 // Exemplo:
 // Entradas da função:
 // ["React", "Jest", "HTML", "CSS", "JavaScript"]
-// "Lucas"
+// "Giulia"
 // Saída:
 // [
 //   {
 //     tech: "CSS",
-//     name: "Lucas"
+//     name: "Giulia"
 //   },
 //   {
 //     tech: "HTML",
-//     name: "Lucas"
+//     name: "Giulia"
 //   },
 //   {
 //     tech: "JavaScript",
-//     name: "Lucas"
+//     name: "Giulia"
 //   },
 //   {
 //     tech: "Jest",
-//     name: "Lucas"
+//     name: "Giulia"
 //   },
 //   {
 //     tech: "React",
-//     name: "Lucas"
+//     name: "Giulia"
 //   }
 // ]
 // Caso o array venha vazio sua função deve retornar 'Vazio!'
